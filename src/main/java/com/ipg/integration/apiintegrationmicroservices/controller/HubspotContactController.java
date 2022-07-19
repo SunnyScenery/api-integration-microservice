@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ipg.integration.apiintegrationmicroservices.bean.hubspot.HubspotConfig;
-import com.ipg.integration.apiintegrationmicroservices.bean.hubspot.result.old.HubspotContactResult;
+import com.ipg.integration.apiintegrationmicroservices.bean.hubspot.result.newapi.HubspotNewContactResult;
+import com.ipg.integration.apiintegrationmicroservices.bean.hubspot.result.oldapi.HubspotContactResult;
 import com.ipg.integration.apiintegrationmicroservices.proxy.HubspotContactProxy;
 
 // Hubspot API Reference: The new one: https://developers.hubspot.com/docs/api/crm/contacts
@@ -26,6 +27,15 @@ public class HubspotContactController {
     public HubspotContactResult findAll() throws URISyntaxException {
 
         HubspotContactResult hubspotContactResult = proxy.findAll(
+            new URI(hubspotConfig.getUrl()), 
+            hubspotConfig.getAuth());
+
+        return hubspotContactResult;
+    }
+
+    @GetMapping("/hubspot/findall-new")
+    public HubspotNewContactResult findAllNew() throws URISyntaxException {
+        HubspotNewContactResult hubspotContactResult = proxy.findAllNew(
             new URI(hubspotConfig.getUrl()), 
             hubspotConfig.getAuth());
 
