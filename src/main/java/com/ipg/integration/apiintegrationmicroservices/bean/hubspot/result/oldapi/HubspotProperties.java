@@ -1,4 +1,4 @@
-package com.ipg.integration.apiintegrationmicroservices.bean.hubspot.result.old;
+package com.ipg.integration.apiintegrationmicroservices.bean.hubspot.result.oldapi;
 
 import java.util.Date;
 import java.util.Map;
