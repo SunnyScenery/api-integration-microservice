@@ -13,6 +13,10 @@ import com.ipg.integration.apiintegrationmicroservices.bean.shopify.ShopifyCusto
 import com.ipg.integration.apiintegrationmicroservices.bean.shopify.ShopifyOrderResult;
 import com.ipg.integration.apiintegrationmicroservices.proxy.ShopifyProxy;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+@Tag(name="shopify")
 @RestController
 public class ShopifyController {
 
@@ -22,6 +26,7 @@ public class ShopifyController {
     @Autowired
     private ShopifyProxy proxy;
 
+    @Operation(summary="get all customers")
     @GetMapping("/shopify/getallcustomers")
     public ShopifyCustomerResult getAllCustomers() throws URISyntaxException {
         
@@ -32,6 +37,7 @@ public class ShopifyController {
         return shopifyResult;
     }
 
+    @Operation(summary="get all orders")
     @GetMapping("/shopify/getallorders")
     public ShopifyOrderResult getAllOrders() throws URISyntaxException {
         
@@ -42,6 +48,7 @@ public class ShopifyController {
         return shopifyResult;
     }
 
+    @Operation(summary="get all checkouts")
     @GetMapping("/shopify/getallcheckouts")
     public ShopifyCheckoutResult getAllCheckouts() throws URISyntaxException {
         

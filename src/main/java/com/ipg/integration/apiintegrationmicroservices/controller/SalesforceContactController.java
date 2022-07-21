@@ -14,6 +14,8 @@ import com.ipg.integration.apiintegrationmicroservices.bean.salesforce.Salesforc
 import com.ipg.integration.apiintegrationmicroservices.proxy.SalesforceAuthProxy;
 import com.ipg.integration.apiintegrationmicroservices.proxy.SalesforceContactProxy;
 
+
+@Tag(name="salesforce")
 @RestController
 public class SalesforceContactController {
 
@@ -29,6 +31,7 @@ public class SalesforceContactController {
     @Autowired
     private SalesforceContactProxy queryProxy;
     
+    // @ApiOperation(value="salesforce find all contacts", notes="find all contacts")
     @GetMapping("/salesforce/findall")
     public SalesforceContactResult findAll() throws URISyntaxException {
 

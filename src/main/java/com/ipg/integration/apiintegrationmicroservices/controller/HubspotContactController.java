@@ -12,8 +12,12 @@ import com.ipg.integration.apiintegrationmicroservices.bean.hubspot.result.newap
 import com.ipg.integration.apiintegrationmicroservices.bean.hubspot.result.oldapi.HubspotContactResult;
 import com.ipg.integration.apiintegrationmicroservices.proxy.HubspotContactProxy;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 // Hubspot API Reference: The new one: https://developers.hubspot.com/docs/api/crm/contacts
 // Here is the old-version api. It is still stable and supported.
+
+@Tag(name="hubspot")
 @RestController
 public class HubspotContactController {
     
