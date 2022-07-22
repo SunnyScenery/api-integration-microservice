@@ -14,6 +14,8 @@ import com.ipg.integration.apiintegrationmicroservices.bean.salesforce.Salesforc
 import com.ipg.integration.apiintegrationmicroservices.proxy.SalesforceAuthProxy;
 import com.ipg.integration.apiintegrationmicroservices.proxy.SalesforceContactProxy;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 
 @Tag(name="salesforce")
 @RestController
